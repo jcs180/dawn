@@ -57,7 +57,7 @@
         "show_text_below": false
       }
     },
-    "featured_collection_slider_LcdAHy": {
+    "featured_collection_slider_HkBJ3D": {
       "type": "featured-collection-slider",
       "settings": {
         "collection": "donuts",
@@ -134,7 +134,7 @@
   },
   "order": [
     "image_banner",
-    "featured_collection_slider_LcdAHy",
+    "featured_collection_slider_HkBJ3D",
     "video",
     "multicolumn"
   ]
