@@ -1,0 +1,71 @@
+<div
+  class="featured-collection-slider"
+  data-slider-settings='
+    {
+      "autoplay": {{ section.settings.autoplay | json }},
+      "products": [
+        {% for product in collection.products %}
+          {
+            "url": "{{ product.url }}",
+            "title": "{{ product.title }}",
+            "image": "{{ product.featured_image | image_url: 'medium' }}",
+            "width": "{{ product.featured_image.width }}",
+            "height": "{{ product.featured_image.height }}",
+            "price": "{{ product.price | money }}"
+          }{% if forloop.last == false %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  '
+>
+  {% if section.settings.collection %}
+    {% assign collection = collections[section.settings.collection] %}
+    {% if collection.products.size > 0 %}
+      <div class="slick-slider">
+        {% for product in collection.products %}
+          <div class="slick-slide">
+            <a href="{{ product.url }}">
+              <img
+                src="{{ product.featured_image | image_url: 'medium' }}"
+                alt="{{ product.title }}"
+                width="{{ product.featured_image.width }}"
+                height="{{ product.featured_image.height }}"
+              >
+              <h3>{{ product.title }}</h3>
+              <p>{{ product.price | money }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No products found in the selected collection.</p>
+    {% endif %}
+  {% else %}
+    <p>Please select a collection.</p>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Featured Slider",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay Slider",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection Slider",
+      "category": "Featured"
+    }
+  ]
+}
+{% endschema %}

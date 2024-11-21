@@ -1,0 +1,13 @@
+.featured-collection-slider {
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  .slick-slide img {
+    width: 100%;
+    height: auto;
+  }
+  .slick-slide h3 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  
