@@ -8,9 +8,7 @@
           {
             "url": "{{ product.url }}",
             "title": "{{ product.title }}",
-            "image": "{{ product.featured_image | image_url: 'medium' }}",
-            "width": "{{ product.featured_image.width }}",
-            "height": "{{ product.featured_image.height }}",
+            "image": "{{ product.featured_image | image_url }}",
             "price": "{{ product.price | money }}"
           }{% if forloop.last == false %},{% endif %}
         {% endfor %}
@@ -18,30 +16,39 @@
     }
   '
 >
+  <h2 class="slider-heading">{{ section.settings.collection.title }}</h2>
   {% if section.settings.collection %}
     {% assign collection = collections[section.settings.collection] %}
     {% if collection.products.size > 0 %}
       <div class="slick-slider">
         {% for product in collection.products %}
-          <div class="slick-slide">
-            <a href="{{ product.url }}">
+          <div class="slick-slide card">
+            <a href="{{ product.url }}" class="card-link">
               <img
-                src="{{ product.featured_image | image_url: 'medium' }}"
+                src="{{ product.featured_image | image_url }}"
                 alt="{{ product.title }}"
-                width="{{ product.featured_image.width }}"
-                height="{{ product.featured_image.height }}"
+                class="card-image"
+                width="200px"
+                height="auto"
               >
-              <h3>{{ product.title }}</h3>
-              <p>{{ product.price | money }}</p>
+              <div class="card-body">
+                <h3 class="card-title">{{ product.title }}</h3>
+                <p class="card-description">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+                <p class="card-flavour">Flavour: Original Glazed</p>
+                <p class="card-price">{{ product.price | money }}</p>
+                <button class="card-button">Add to cart</button>
+              </div>
             </a>
           </div>
         {% endfor %}
       </div>
     {% else %}
-      <p>No products found in the selected collection.</p>
+      <p class="no-products">No products found in the selected collection.</p>
     {% endif %}
   {% else %}
-    <p>Please select a collection.</p>
+    <p class="no-collection">Please select a collection.</p>
   {% endif %}
 </div>
 

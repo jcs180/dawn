@@ -297,14 +297,12 @@
       }
     </script>
 
-    {% comment %} Start Slick Slider {% endcomment %}
+    {% comment %} Slick Slider styles {% endcomment %}
     <link rel="stylesheet" href="{{ 'slick.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'slick-theme.css' | asset_url }}">
-    <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
 
-    {% comment %} Start Featured Collection Slider {% endcomment %}
+    {% comment %} Featured Collection Slider styles {% endcomment %}
     <link rel="stylesheet" href="{{ 'featured-collection-slider.css' | asset_url }}">
-    <script src="{{ 'featured-collection-slider.js' | asset_url }}" defer></script>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -381,5 +379,14 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {% comment %} jQuery {% endcomment %}
+    <script src="{{ 'jquery-3.7.1.min.js' | asset_url }}" defer></script>
+
+    {% comment %} Slick Slider script {% endcomment %}
+    <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
+
+    {% comment %} Featured Collection Slider script {% endcomment %}
+    <script src="{{ 'featured-collection-slider.js' | asset_url }}" defer></script>
   </body>
 </html>

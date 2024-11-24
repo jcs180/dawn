@@ -1,13 +1,98 @@
+/* Featured Collection Slider Styles */
 .featured-collection-slider {
     margin: 20px auto;
     max-width: 1200px;
+    padding: 20px;
   }
-  .slick-slide img {
+  
+  .slider-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .slick-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  .slick-slide {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 0 0 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .slick-slide:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .card-image {
     width: 100%;
     height: auto;
+    border-radius: 8px;
   }
-  .slick-slide h3 {
+  
+  .card-body {
+    margin-top: 15px;
     text-align: center;
-    margin: 10px 0;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .card-flavour {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  
+  .card-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card-button:hover {
+    background-color: #218838;
+  }
+  
+  .no-products,
+  .no-collection {
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
   }
   
