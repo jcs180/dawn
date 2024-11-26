@@ -1,0 +1,114 @@
+/* Wrapper */
+.featured-collection-slider--wrapper {
+  padding: 40px 10px;
+}
+
+/* Title Bar */
+.featured-collection-slider--title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.featured-collection-slider--title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: 0 0 10px;
+}
+
+.featured-collection-slider--title-bar h2 {
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.featured-collection-slider--title-bar a {
+  color: rgba(67, 67, 67);
+}
+
+/* Card */
+.featured-collection-slider--card {
+  border-radius: 20px;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 20px 10px;
+}
+
+.featured-collection-slider--card:hover {
+  border: 1px solid rgb(123, 226, 129);
+  transition: 0.1s;
+}
+
+.featured-collection-slider--card img {
+  max-width: 100%;
+  aspect-ratio: 1.5;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.featured-collection-slider--card-title {
+  font-family: Futura;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 15px 0 5px;
+}
+
+.featured-collection-slider--card-description {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.featured-collection-slider--card-description p {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.featured-collection-slider--card-description p span {
+  line-height: 1.25;
+  display: inline-block !important;
+}
+
+.featured-collection-slider--card-metafields {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.featured-collection-slider--card-atc-button {
+  background: rgb(143, 246, 149);
+  border-radius: 0 0 10px 10px;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.featured-collection-slider--card-atc-button:hover {
+  background: rgb(123, 226, 129);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+/* Mobile sizes */
+@media screen and (max-width: 600px) {
+  .featured-collection-slider--title-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .featured-collection-slider--title-bar h2 {
+    font-size: 32px;
+  }
+
+  .featured-collection-slider--title-bar a {
+    font-size: 14px;
+  }
+}

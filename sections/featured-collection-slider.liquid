@@ -1,0 +1,85 @@
+<div class="featured-collection-slider--wrapper page-width">
+  <div class="featured-collection-slider--title-bar">
+    <h2>{{ section.settings.collection.title }}</h2>
+    <a href="{{ section.settings.collection.url }}">View all</a>
+  </div>
+
+  <div
+    class="featured-collection-slider--card-list"
+    data-slick-autoplay="{{ section.settings.autoplay }}"
+    data-slick-speed="{{ section.settings.speed }}"
+  >
+    {% if section.settings.collection %}
+      {% assign collection = collections[section.settings.collection] %}
+      {% if collection.products.size > 0 %}
+        {% for product in collection.products %}
+          <div class="featured-collection-slider--card">
+            <img
+              src="{{ product.featured_image | image_url }}"
+              alt="{{ product.title }}"
+              class="card-image"
+              width="auto"
+              height="auto"
+            >
+
+            <h3 class="featured-collection-slider--card-title">{{ product.title }}</h3>
+            <span class="featured-collection-slider--card-description">
+              {{ product.description }}
+            </span>
+            {% for metafield in product.metafields.info %}
+              {% if metafield.first == 'flavour' %}
+                <p class="featured-collection-slider--card-metafields">
+                  {{- metafield.first | capitalize }}: {{ metafield.last -}}
+                </p>
+              {% endif %}
+            {% endfor %}
+
+            <button class="featured-collection-slider--card-atc-button" data-product-id="{{product.id}}">
+              Add to cart
+            </button>
+          </div>
+        {% endfor %}
+
+      {% else %}
+        <p>No products found in the selected collection.</p>
+      {% endif %}
+    {% else %}
+      <p>Please select a collection.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Slider",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "sec",
+      "label": "Autoplay Speed",
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection Slider",
+      "category": "Featured"
+    }
+  ]
+}
+{% endschema %}
