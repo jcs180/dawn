@@ -62,7 +62,7 @@
       "settings": {
         "collection": "donuts",
         "autoplay": true,
-        "speed": 1
+        "speed": 5
       }
     },
     "video": {
