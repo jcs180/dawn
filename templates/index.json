@@ -60,7 +60,7 @@
     "featured_collection_slider_HkBJ3D": {
       "type": "featured-collection-slider",
       "settings": {
-        "collection": "cupcakes",
+        "collection": "donuts",
         "autoplay": true,
         "speed": 5
       }
