@@ -61,7 +61,7 @@
       "type": "featured-collection-slider",
       "settings": {
         "collection": "donuts",
-        "autoplay": true,
+        "autoplay": false,
         "speed": 1
       }
     },
