@@ -61,8 +61,8 @@
       "type": "featured-collection-slider",
       "settings": {
         "collection": "donuts",
-        "autoplay": false,
-        "speed": 5
+        "autoplay": true,
+        "speed": 1
       }
     },
     "video": {
