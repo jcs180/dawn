@@ -61,7 +61,7 @@
       "type": "featured-collection-slider",
       "settings": {
         "collection": "cupcakes",
-        "autoplay": false,
+        "autoplay": true,
         "speed": 1
       }
     },
