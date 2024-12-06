@@ -1,0 +1,50 @@
+.recently-viewed-section-wrapper {
+  /* Initialise hidden to avoid content jumping */
+  display: none;
+}
+
+#recently-viewed-products {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.recently-viewed-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-basis: 24%;
+  gap: 1rem;
+  max-width: 25%;
+}
+
+.recently-viewed-item img {
+  width: 100%;
+}
+
+.recently-viewed-item .info {
+  margin-top: 0.7rem;
+}
+
+.recently-viewed-item .price {
+  margin-top: 0.7rem;
+  color: black;
+}
+
+.recently-viewed-add-to-cart {
+  margin: 0;
+}
+
+/*
+    TODO:
+    - Finish mobile styling
+    - Possibly move to display: grid
+    - Consider using existing utility classes
+    - Add hover effects
+*/
+@media screen and (max-width: 989px) {
+  .recently-viewed-item {
+    flex-basis: 49%;
+    max-width: 100%;
+  }
+}

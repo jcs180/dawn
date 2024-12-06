@@ -296,6 +296,13 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {%- if template == 'product' -%}
+      {% comment %}
+        Load this script on all PDPs, so we collect data even if recently viewed products section isn't present.
+      {% endcomment %}
+      <script src="{{ 'recently-viewed.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
